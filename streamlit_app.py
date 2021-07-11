@@ -48,7 +48,7 @@ def download_file(file_path):
 
 EXTERNAL_DEPENDENCIES = {
     "emotion.model": {
-    "url": "https://www.dropbox.com/s/072b5vf4b33bu1l/emotion_detection_model_for_streamlit.h5"
+    "url": "https://www.dropbox.com/s/072b5vf4b33bu1l/emotion_detection_model_for_streamlit.h5",
     "size": 126265696
     }
 }
