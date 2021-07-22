@@ -22,6 +22,6 @@ If you wanna contribute some stuff, potential extensions, I'd love to see:
   
 Internal note:
 
-Potential add c++ support and made it deployable on MCU with camera.
+Potentially, add c++ support and made it deployable on MCU with camera.
 
 
