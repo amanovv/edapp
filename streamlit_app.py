@@ -23,13 +23,10 @@ def main():
 
     # Prepare the image
     resized = cv2.resize(image, (48, 48))
-    gray_1d = np.mean(resized, axis=-1)
-    gray = np.zeros_like(resized)
-    gray[:,:,0] = gray_1d
-    gray[:,:,1] = gray_1d
-    gray[:,:,2] = gray_1d
-    normalized = gray/255
-    model_input = normalized.reshape(1,48,48)
+
+    img = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+    img = img/255
+    model_input = img.reshape(48,48,1)
 
     # Run the model
     scores_transfer = model.predict(model_input)
