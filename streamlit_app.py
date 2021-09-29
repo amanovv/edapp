@@ -40,10 +40,11 @@ def main():
     #st.balloons()
     # Print results and plot score
     st.write(f"The predicted emotion: {EMOTIONS[scores.argmax()]}")
-
-    col1, col2 , col3, col4, col5 = st.columns(5)
     st.warning("Here is overall results:")
     st.write(" ")
+    col1, col2 , col3, col4, col5 = st.columns(5)
+    
+    
     col1.metric(EMOTIONS[0], str(scores[0][0]*100)+" %")
     col2.metric(EMOTIONS[1], str(scores[0][1]*100)+" %")
     col3.metric(EMOTIONS[2], str(scores[0][2]*100)+" %")
