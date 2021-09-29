@@ -6,7 +6,6 @@ keras model web app deployment using streamlit
 
 some additions: charting with streamlit, spinner with streamlit, and ballons with streamlit
 
-initial credits to Inspirit AI
 
 If you wanna contribute some stuff, potential extensions, I'd love to see:
 
