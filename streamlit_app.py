@@ -18,7 +18,7 @@ def main():
   if app_mode == 'App demo':
     st.header("This app detects your emotions! upload a picture to try it out!")
     st.subheader("Neural network is trained to recognize the human facial emotions")
-    st.write("it has overall 70% percent accuracy which is 5% better than average human, computer better than human in recognizing human emotions?!!!")
+    st.warning("it has overall 70% percent accuracy which is 5% better than average human, computer better than human in recognizing human emotions?!!!")
     f = st.file_uploader("Upload Image")
 
     if f is not None: 
