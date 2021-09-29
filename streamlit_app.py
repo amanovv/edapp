@@ -19,11 +19,12 @@ def main():
     # Extract and display the image
     file_bytes = np.asarray(bytearray(f.read()), dtype=np.uint8)
     image = cv2.imdecode(file_bytes, 1)
-    
+    out = cv2.resize(image, (512, 512))
+    st.image(out, channels="BGR")
 
     # Prepare the image
     resized = cv2.resize(image, (48, 48))
-    st.image(resized, channels="BGR")
+    
     img = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
     img = img/255
     model_input = img.reshape(1,48,48,1)
