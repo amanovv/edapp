@@ -26,7 +26,7 @@ def main():
 
     img = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
     img = img/255
-    model_input = img.reshape(48,48,1)
+    model_input = img.reshape(1,48,48,1)
 
     # Run the model
     scores_transfer = model.predict(model_input)
