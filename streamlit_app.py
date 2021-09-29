@@ -4,11 +4,6 @@ import pandas as pd
 import cv2
 import time
 import wget
-import tensorflow as tf
-from tensorflow.keras.models import load_model
-import tensorflow.keras.optimizers as optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Activation, MaxPooling2D, Dropout, Flatten, Reshape, Dense, Conv2D
 import numpy as np
 
 def main():
@@ -71,7 +66,7 @@ def download_model():
   #filename = tf.keras.utils.get_file("emotion_detection_model_for_streamlit.h5", url)
   
   # accuracy = 68.25% ~ 3.25% better than human in TELLING EMOTIONS!!! (on average)
-  model = load_model("eda_streamlit.h5")
+  model = tensorflow.keras.models.load_model("eda_streamlit.h5")
   return model
 
 
