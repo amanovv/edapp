@@ -22,7 +22,7 @@ def main():
     st.image(image, channels="BGR")
 
     # Prepare the image
-    resized = cv2.resize(image, (48, 48), interpolation=cv2.INTER_LANCZOS4)
+    resized = cv2.resize(image, (48, 48))
     gray_1d = np.mean(resized, axis=-1)
     gray = np.zeros_like(resized)
     gray[:,:,0] = gray_1d
