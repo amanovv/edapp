@@ -56,7 +56,7 @@ def main():
     st.area_chart(df)
     st.balloons()
 
-st.cache()
+@st.cache(allow_output_mutation=True)
 def download_model():
   model_link = 'https://www.dropbox.com/s/bdyohk8pbmxummc/best_mlp_model.h5?dl=1'
   #while finished == 0:
@@ -65,6 +65,7 @@ def download_model():
   #  finished = 1
   #filename = wget.download(url)
   model_file = "eda_streamlit.h5"
+
   wget.download(model_link,model_file)
 
   #filename = tf.keras.utils.get_file("emotion_detection_model_for_streamlit.h5", url)
