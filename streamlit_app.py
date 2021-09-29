@@ -51,11 +51,11 @@ def main():
       col1, col2 , col3, col4, col5 = st.columns(5)
       
       
-      col1.metric(EMOTIONS[0], str(round(scores[0][0],2)*100)+" %")
-      col2.metric(EMOTIONS[1], str(round(scores[0][1],2)*100)+" %")
-      col3.metric(EMOTIONS[2], str(round(scores[0][2],2)*100)+" %")
-      col4.metric(EMOTIONS[3], str(round(scores[0][3],2)*100)+" %")
-      col5.metric(EMOTIONS[4], str(round(scores[0][4],2)*100)+" %")
+      col1.metric(EMOTIONS[0], str(round(scores[0][0]*100,1))+" %")
+      col2.metric(EMOTIONS[1], str(round(scores[0][1]*100,1))+" %")
+      col3.metric(EMOTIONS[2], str(round(scores[0][2]*100,1))+" %")
+      col4.metric(EMOTIONS[3], str(round(scores[0][3]*100,1))+" %")
+      col5.metric(EMOTIONS[4], str(round(scores[0][4]*100,1))+" %")
     
       st.balloons()
 
