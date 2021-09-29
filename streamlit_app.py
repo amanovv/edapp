@@ -54,20 +54,20 @@ def main():
 
 #@st.cache(allow_output_mutation=True)
 def download_model():
-  model_link = 'https://www.dropbox.com/s/da693oqffdnkltt/vgg_model.h5?dl=1'
+  model_link = 'https://www.dropbox.com/s/m8ucelggtm672op/vgg_transfer_eda.h5?dl=1'
   #while finished == 0:
   #  st.spinner()
   #  os.system(f"wget https://www.dropbox.com/s/072b5vf4b33bu1l/emotion_detection_model_for_streamlit.h5")
   #  finished = 1
   #filename = wget.download(url)
-  model_file = "model.h5"
+  model_file = 'model.h5'
 
   wget.download(model_link,model_file)
 
   #filename = tf.keras.utils.get_file("emotion_detection_model_for_streamlit.h5", url)
   
-  # accuracy = 68.25% ~ 3.25% better than human in TELLING EMOTIONS!!! (on average)
-  loaded_model = tensorflow.keras.models.load_model("model.h5")
+  # accuracy = 68.75% ~ 3.75% better than human in TELLING EMOTIONS!!! (on average)
+  loaded_model = tensorflow.keras.models.load_model('model.h5')
   return loaded_model
 
 
