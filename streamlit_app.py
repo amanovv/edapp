@@ -58,17 +58,17 @@ def main():
       col5.metric(EMOTIONS[4], str(scores[0][4]*100)+" %")
     
       st.balloons()
-      
+
   elif app_mode == 'Neural Network details':
     st.subheader("Neural network test performance and network details")
 
-    cm_img, msummary_img = download_images()
+    download_images()
 
-    st.image(cm_img,caption="Confusion Matrix details on test data")
+    st.image('cm.png',caption="Confusion Matrix details on test data")
 
     st.markdown("\n")
     st.markdown("\n")
-    st.image(msummary_img, caption="Neural network architecture details")
+    st.image('summary.png', caption="Neural network architecture details")
 
 
 
@@ -96,8 +96,6 @@ def download_images():
 
   wget.download(cm_link,cm)
   wget.download(m_summary_link,msummary)
-
-  return cm, msummary
 
 
 if __name__ == "__main__":
