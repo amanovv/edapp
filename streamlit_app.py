@@ -66,7 +66,7 @@ def download_model():
   #filename = tf.keras.utils.get_file("emotion_detection_model_for_streamlit.h5", url)
   
   # accuracy = 68.25% ~ 3.25% better than human in TELLING EMOTIONS!!! (on average)
-  model = tensorflow.keras.models.load_model("eda_streamlit.h5")
+  model = tensorflow.keras.models.load_model(model_file)
   return model
 
 
