@@ -52,16 +52,16 @@ def main():
     st.area_chart(df)
     st.balloons()
 
-#@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def download_model():
-  model_link = 'https://www.dropbox.com/s/3sb3rlb87c0twgw/best_cnn_model.h5?dl=1'
+  model_link = 'https://www.dropbox.com/s/90m9p48gkkfd54i/best_cnn_model_2.h5?dl=1'
   
   model_file = 'model.h5'
 
   wget.download(model_link,model_file)
 
   
-  # accuracy = 68.75% ~ 3.75% better than human in TELLING EMOTIONS!!! (on average)
+  # accuracy = 70% ~ 5% better than human in TELLING EMOTIONS!!! (on average)
   loaded_model = tensorflow.keras.models.load_model('model.h5')
   return loaded_model
 
