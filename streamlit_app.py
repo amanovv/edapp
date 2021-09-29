@@ -42,11 +42,11 @@ def main():
 
     col1, col2 , col3, col4, col5 = st.columns(5)
 
-    col1.metric(EMOTIONS[0], str(scores[0]*100)+" %")
-    col2.metric(EMOTIONS[1], str(scores[1]*100)+" %")
-    col3.metric(EMOTIONS[2], str(scores[2]*100)+" %")
-    col4.metric(EMOTIONS[3], str(scores[3]*100)+" %")
-    col5.metric(EMOTIONS[4], str(scores[4]*100)+" %")
+    col1.metric(EMOTIONS[0], str(scores[0][0]*100)+" %")
+    col2.metric(EMOTIONS[1], str(scores[0][1]*100)+" %")
+    col3.metric(EMOTIONS[2], str(scores[0][2]*100)+" %")
+    col4.metric(EMOTIONS[3], str(scores[0][3]*100)+" %")
+    col5.metric(EMOTIONS[4], str(scores[0][4]*100)+" %")
     
     
 
