@@ -54,7 +54,7 @@ def main():
 
 #@st.cache(allow_output_mutation=True)
 def download_model():
-  model_link = 'https://www.dropbox.com/s/qjbg6rjj821a6mw/vgg_transfer_eda.h5?dl=1'
+  model_link = 'https://www.dropbox.com/s/3sb3rlb87c0twgw/best_cnn_model.h5?dl=1'
   
   model_file = 'model.h5'
 
