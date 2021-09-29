@@ -1,21 +1,21 @@
 import streamlit as st
-import os
-#import urllib
 import tensorflow as tf
 import pandas as pd 
 import cv2
 import time
-#import wget
+import wget
 
 import numpy as np
 
 # downloading file requirs some work
-finished = 0
-while finished == 0:
-  st.spinner()
-  os.system(f"wget https://www.dropbox.com/s/072b5vf4b33bu1l/emotion_detection_model_for_streamlit.h5")
-  finished = 1
+model_link = 'https://www.dropbox.com/s/072b5vf4b33bu1l/emotion_detection_model_for_streamlit.h5'
+#while finished == 0:
+#  st.spinner()
+#  os.system(f"wget https://www.dropbox.com/s/072b5vf4b33bu1l/emotion_detection_model_for_streamlit.h5")
+#  finished = 1
 #filename = wget.download(url)
+model_file = 'eda_streamlit.h5'
+wget.download(model_link,model_file)
 
 #filename = tf.keras.utils.get_file("emotion_detection_model_for_streamlit.h5", url)
 EMOTIONS = ['ANGRY', 'HAPPY', 'SAD', 'SURPRISE', 'NEUTRAL']
@@ -23,7 +23,7 @@ EMOTIONS = ['ANGRY', 'HAPPY', 'SAD', 'SURPRISE', 'NEUTRAL']
 st.title("Emotion Detector")
 st.header("This app detects your emotions! upload a picture to try it out!")
 
-model = tf.keras.models.load_model("emotion_detection_model_for_streamlit.h5")
+model = tf.keras.models.load_model("eda_streamlit.h5")
 #model_lm = tf.keras.models.load_model("best_lm_model.h5")
 f = st.file_uploader("Upload Image")
 
