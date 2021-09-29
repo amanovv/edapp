@@ -54,20 +54,20 @@ def main():
 
 @st.cache(allow_output_mutation=True)
 def download_model():
-  model_link = 'https://www.dropbox.com/s/bdyohk8pbmxummc/best_mlp_model.h5?dl=1'
+  model_link = 'https://www.dropbox.com/s/tishbdyvzmi22dd/saved_model.pb?dl=1'
   #while finished == 0:
   #  st.spinner()
   #  os.system(f"wget https://www.dropbox.com/s/072b5vf4b33bu1l/emotion_detection_model_for_streamlit.h5")
   #  finished = 1
   #filename = wget.download(url)
-  model_file = "eda_streamlit.h5"
+  model_file = "model.pb"
 
   wget.download(model_link,model_file)
 
   #filename = tf.keras.utils.get_file("emotion_detection_model_for_streamlit.h5", url)
   
   # accuracy = 68.25% ~ 3.25% better than human in TELLING EMOTIONS!!! (on average)
-  model = tensorflow.keras.models.load_model("eda_streamlit.h5")
+  model = tensorflow.keras.models.load_model("model.pb")
   return model
 
 
