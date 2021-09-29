@@ -13,7 +13,7 @@ def main():
   st.title("Facial Emotion Detector")
   
 
-  app_mode = st.sidebar.selectbox('You may choose other modes here: ', ['App demo', 'Technical specifications'])
+  app_mode = st.sidebar.selectbox('You may choose other modes here: ', ['App demo', 'Neural Network details'])
   model = download_model()
   if app_mode == 'App demo':
     st.header("This app detects your emotions! upload a picture to try it out!")
