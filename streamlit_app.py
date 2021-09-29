@@ -52,7 +52,7 @@ def main():
     st.area_chart(df)
     st.balloons()
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def download_model():
   model_link = 'https://www.dropbox.com/s/da693oqffdnkltt/vgg_model.h5?dl=1'
   #while finished == 0:
