@@ -53,7 +53,7 @@ def main():
     st.balloons()
 
 st.cache()
-def download_model()
+def download_model():
   model_link = 'https://www.dropbox.com/s/bdyohk8pbmxummc/best_mlp_model.h5?dl=1'
   #while finished == 0:
   #  st.spinner()
