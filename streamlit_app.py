@@ -19,17 +19,17 @@ def main():
     # Extract and display the image
     file_bytes = np.asarray(bytearray(f.read()), dtype=np.uint8)
     image = cv2.imdecode(file_bytes, 1)
-    st.image(image, channels="BGR")
+    
 
     # Prepare the image
     resized = cv2.resize(image, (48, 48))
-
+    st.image(resized, channels="BGR")
     img = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
     img = img/255
     model_input = img.reshape(1,48,48,1)
 
     # Run the model
-    scores_transfer = model.predict(model_input)
+    scores = model.predict(model_input)
     #scores_lm_model = model_lm.predict(model_input.reshape())
 
     with st.spinner(text='predicting ...'):
@@ -38,15 +38,25 @@ def main():
 
     st.balloons()
     # Print results and plot score
-    st.write(f"The predicted emotion with transfer learning is: {EMOTIONS[scores_transfer.argmax()]}")
+    st.write(f"The predicted emotion: {EMOTIONS[scores.argmax()]}")
 
+    col1, col2 , col3, col4, col5 = st.columns(5)
+
+    col1.metric(EMOTIONS[0], str(scores[0]*100)+" %")
+    col2.metric(EMOTIONS[1], str(scores[1]*100)+" %")
+    col3.metric(EMOTIONS[2], str(scores[2]*100)+" %")
+    col4.metric(EMOTIONS[3], str(scores[3]*100)+" %")
+    col5.metric(EMOTIONS[4], str(scores[4]*100)+" %")
     
-    df = pd.DataFrame(scores_transfer.flatten(), columns = EMOTIONS)
+    
+
+    #st.write(scores_transfer.flatten())
+    #df = pd.DataFrame(scores_transfer.flatten(), columns = EMOTIONS)
     #df["Emotion"] = EMOTIONS
     #df["Scores_transfer"] = scores_transfer.flatten()
 
 
-    st.area_chart(df)
+    #st.area_chart(df)
     st.balloons()
 
 @st.cache(allow_output_mutation=True)
