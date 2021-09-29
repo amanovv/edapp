@@ -29,7 +29,7 @@ def main():
     gray[:,:,1] = gray_1d
     gray[:,:,2] = gray_1d
     normalized = gray/255
-    model_input = np.expand_dims(normalized,0)
+    model_input = normalized.reshape(1,48,48)
 
     # Run the model
     scores_transfer = model.predict(model_input)
